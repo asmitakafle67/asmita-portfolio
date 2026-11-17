@@ -1,5 +1,6 @@
 import React from 'react';
-import { Layers, Database, Cloud, Activity, Check } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Layers, Activity, Palette, Wrench, Check } from 'lucide-react';
 import { SectionHeading } from '../components/SectionHeading';
 import { skillCategories } from '../data/portfolioData';
 
@@ -7,15 +8,15 @@ export const SkillsSection: React.FC = () => {
   const getCategoryIcon = (index: number) => {
     switch (index) {
       case 0:
-        return <Layers className="w-5 h-5 text-accent-600" />;
+        return <Layers className="w-5 h-5 text-accent" />;
       case 1:
-        return <Activity className="w-5 h-5 text-emerald-600" />;
+        return <Activity className="w-5 h-5 text-emerald-500" />;
       case 2:
-        return <Database className="w-5 h-5 text-indigo-600" />;
+        return <Palette className="w-5 h-5 text-accent" />;
       case 3:
-        return <Cloud className="w-5 h-5 text-sky-600" />;
+        return <Wrench className="w-5 h-5 text-accent" />;
       default:
-        return <Layers className="w-5 h-5 text-accent-600" />;
+        return <Layers className="w-5 h-5 text-accent" />;
     }
   };
 
@@ -23,19 +24,19 @@ export const SkillsSection: React.FC = () => {
     switch (level) {
       case 'Advanced':
         return (
-          <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-blue-50 text-accent-700 border border-blue-200">
+          <span className="chip text-[10px] font-mono uppercase tracking-[0.08em] bg-accent/10 text-accent border-accent/25 py-0.5 px-2">
             Advanced
           </span>
         );
       case 'Proficient':
         return (
-          <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">
+          <span className="chip text-[10px] font-mono uppercase tracking-[0.08em] bg-emerald-500/10 text-emerald-500 border-emerald-500/25 py-0.5 px-2">
             Proficient
           </span>
         );
       case 'Developing':
         return (
-          <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200">
+          <span className="chip text-[10px] font-mono uppercase tracking-[0.08em] bg-amber-500/10 text-amber-500 border-amber-500/25 py-0.5 px-2">
             Developing
           </span>
         );
@@ -43,48 +44,49 @@ export const SkillsSection: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-20 sm:py-28 bg-background border-t border-charcoal-200/60">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-20 sm:py-28 bg-paper border-t border-hairline">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          category="Capabilities"
-          title="Technical Skills & Competencies"
-          subtitle="Honest, transparent overview of technologies I build with daily versus areas of ongoing exploration."
+          category="04 / CAPABILITIES"
+          title="Frontend Technical Skills"
+          subtitle="Honest, transparent overview of frontend technologies, design systems, and state architectures I engineer daily."
         />
 
         {/* Legend */}
-        <div className="flex flex-wrap items-center gap-4 mb-8 text-xs text-charcoal-600 bg-surface px-4 py-3 rounded-xl border border-charcoal-200/70 w-fit">
-          <span className="font-semibold text-charcoal-700">Proficiency Legend:</span>
+        <div className="flex flex-wrap items-center gap-4 mb-10 text-xs font-mono text-graphite bg-surface px-5 py-3 rounded-2xl border border-hairline w-fit">
+          <span className="font-semibold text-ink uppercase tracking-[0.08em]">Proficiency Legend:</span>
           <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-accent-600" />
-            <span><strong>Advanced:</strong> Core daily specialization (5+ yrs)</span>
+            <span className="w-2 h-2 rounded-full bg-accent" />
+            <span>Advanced (Core Daily Stack 4 yrs)</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-emerald-600" />
-            <span><strong>Proficient:</strong> Production-tested & comfortable</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-amber-500" />
-            <span><strong>Developing:</strong> Active learning & hands-on application</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-500" />
+            <span>Proficient (Production Tested)</span>
           </div>
         </div>
 
-        {/* Category Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Category Cards Grid with Motion Animation */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {skillCategories.map((category, idx) => (
-            <div
+            <motion.div
               key={category.title}
-              className="rounded-2xl bg-surface border border-charcoal-200/90 shadow-subtle p-6 hover:shadow-card hover:border-charcoal-300 transition-all flex flex-col justify-between"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className="rounded-3xl bg-surface border border-hairline shadow-subtle p-6 sm:p-7 hover:border-accent/60 transition-all flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2.5 rounded-xl bg-charcoal-50 border border-charcoal-200/60">
+                <div className="flex items-center gap-3.5 mb-2">
+                  <div className="p-2.5 rounded-xl bg-paper border border-hairline">
                     {getCategoryIcon(idx)}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-charcoal-900 tracking-tight">
+                    <h3 className="text-lg font-bold text-ink tracking-tight">
                       {category.title}
                     </h3>
-                    <p className="text-xs text-charcoal-500">
+                    <p className="text-xs text-graphite font-mono mt-0.5">
                       {category.description}
                     </p>
                   </div>
@@ -93,38 +95,38 @@ export const SkillsSection: React.FC = () => {
                 {/* Skills list */}
                 <div className="mt-5 space-y-2">
                   {category.skills.map((skill) => (
-                    <div
+                    <motion.div
                       key={skill.name}
-                      className={`flex items-center justify-between p-2.5 rounded-lg border transition-colors ${
+                      whileHover={{ x: 4, transition: { duration: 0.15 } }}
+                      className={`flex items-center justify-between p-3 rounded-xl border transition-all ${
                         skill.highlight
-                          ? 'bg-charcoal-50/70 border-charcoal-200/80 hover:bg-white'
-                          : 'bg-white border-charcoal-100 hover:bg-charcoal-50/50'
+                          ? 'bg-paper/70 border-hairline hover:border-accent/40 hover:bg-[#16201a]/60'
+                          : 'bg-paper/30 border-hairline/60 hover:border-hairline hover:bg-paper/50'
                       }`}
                     >
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2.5">
                         {skill.highlight && (
-                          <Check className="w-3.5 h-3.5 text-accent-600 shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-accent shrink-0" />
                         )}
-                        <span className={`text-sm ${skill.highlight ? 'font-semibold text-charcoal-900' : 'text-charcoal-700'}`}>
+                        <span className={`text-sm ${skill.highlight ? 'font-semibold text-ink' : 'text-graphite'}`}>
                           {skill.name}
                         </span>
                       </div>
                       {getLevelBadge(skill.level)}
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
 
               {/* Bottom tag */}
-              <div className="mt-4 pt-3 border-t border-charcoal-100 flex items-center justify-between text-[11px] text-charcoal-400 font-mono">
-                <span>{category.skills.length} skills</span>
-                <span>Type-checked & tested</span>
+              <div className="mt-5 pt-3 border-t border-hairline flex items-center justify-between text-[11px] text-faint font-mono">
+                <span>{category.skills.length} specialized frontend skills</span>
+                <span className="text-accent">verified</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
 };
-

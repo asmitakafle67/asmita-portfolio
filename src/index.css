@@ -2,49 +2,187 @@
 @tailwind components;
 @tailwind utilities;
 
+/* rosan.me signature cosmic dark aesthetic */
+:root {
+  color-scheme: dark;
+  --color-paper: #080c09;
+  --color-surface: #0f1511;
+  --color-surface-2: #16201a;
+  --color-ink: #eaf0eb;
+  --color-graphite: #8d9e91;
+  --color-hairline: #1d2820;
+  --color-faint: #5a6e60;
+  --color-accent: #76d39c;
+  --color-accent-light: #9fe7be;
+  --color-accent-soft: rgba(118, 211, 156, 0.1);
+  --color-accent-glow: rgba(118, 211, 156, 0.28);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
-    color: #121316;
-    background-color: #FAF9F6;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
   }
 
   body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #FAF9F6;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
     overflow-x: hidden;
   }
 
   ::selection {
-    background-color: #DBEAFE;
-    color: #1E40AF;
+    background-color: rgba(118, 211, 156, 0.25);
+    color: #9fe7be;
   }
 }
 
-/* Custom scrollbar styling */
+/* Floating Cosmic Nav as seen on rosan.me */
+.cosmic-nav {
+  background: rgba(15, 21, 17, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--color-hairline);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(118, 211, 156, 0.08) inset;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cosmic-nav:hover {
+  border-color: rgba(118, 211, 156, 0.25);
+}
+
+/* Chip & Pill Design System */
+.chip {
+  white-space: nowrap;
+  border: 1px solid var(--color-hairline);
+  border-radius: 9999px;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  display: inline-flex;
+  transition: all 0.2s ease;
+  background: rgba(15, 21, 17, 0.6);
+  color: var(--color-graphite);
+}
+
+.chip:hover {
+  border-color: var(--color-accent);
+  color: var(--color-ink);
+  background: var(--color-surface);
+}
+
+.pill {
+  white-space: nowrap;
+  border: 1px solid var(--color-hairline);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  border-radius: 9999px;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.25rem;
+  display: inline-flex;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pill:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-light);
+  transform: translateY(-1px);
+}
+
+.pill-accent {
+  background: var(--color-accent);
+  color: #080c09;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.25rem;
+  display: inline-flex;
+  font-weight: 600;
+  box-shadow: 0 4px 20px -2px var(--color-accent-glow);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pill-accent:hover {
+  background: var(--color-accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -2px var(--color-accent-glow);
+}
+
+/* Glass panel */
+.glass-panel {
+  background: rgba(15, 21, 17, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Cosmic background glow effects */
+@keyframes ambientDrift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.35;
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.1);
+    opacity: 0.5;
+  }
+  66% {
+    transform: translate(-20px, 25px) scale(0.95);
+    opacity: 0.38;
+  }
+}
+
+.animate-ambient-1 {
+  animation: ambientDrift 14s infinite ease-in-out;
+}
+
+.animate-ambient-2 {
+  animation: ambientDrift 18s infinite ease-in-out reverse;
+}
+
+/* Card hover glow border */
+.glow-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(118, 211, 156, 0.4), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-card:hover::before {
+  opacity: 1;
+}
+
+/* Custom dark scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF9F6;
+  background: #080c09;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4D4D8;
+  background: #1c271e;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A1A1AA;
+  background: #2a3c2e;
 }
-
-/* Glassmorphism utility for clean modern headers */
-.glass-panel {
-  background: rgba(250, 249, 246, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-

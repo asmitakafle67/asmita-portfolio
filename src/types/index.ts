@@ -3,9 +3,10 @@ export interface Project {
   title: string;
   category: string;
   description: string;
-  roleHighlights: string[];
+  roleHighlights?: string[];
   technologies: string[];
   liveUrl: string;
+  image?: string;
   status?: string;
   accentColor?: string;
 }

@@ -9,213 +9,265 @@ import {
   Mail,
   CheckCircle,
   Terminal,
+  Sparkles,
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
+import { MediumIcon } from '../components/Icons';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden">
-      {/* Subtle background grid pattern */}
+    <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden min-h-[92vh] flex flex-col justify-center">
+      {/* rosan.me style subtle ambient gradient orbs */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[380px] bg-accent/10 rounded-full blur-[130px] pointer-events-none animate-glow" />
+      <div className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-accent/8 rounded-full blur-[110px] pointer-events-none" />
+
+      {/* Subtle architectural dark grid */}
       <div 
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
-          backgroundImage: `radial-gradient(#121316 1px, transparent 1px)`,
-          backgroundSize: '24px 24px',
+          backgroundImage: `linear-gradient(#76d39c 1px, transparent 1px), linear-gradient(to right, #76d39c 1px, transparent 1px)`,
+          backgroundSize: '48px 48px',
         }}
       />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           {/* Main Info */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-8 space-y-6"
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 space-y-6"
           >
             {/* Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-charcoal-200/90 shadow-subtle text-xs font-medium text-charcoal-700">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Available for Full Stack & Frontend Roles</span>
-              <span className="text-charcoal-300">•</span>
-              <span className="flex items-center gap-1 text-charcoal-500">
-                <MapPin className="w-3 h-3 text-accent-600" />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0f1511] border border-[#1d2820] shadow-sm font-mono text-xs text-[#8d9e91]"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
+              </span>
+              <span>Specialized Frontend Developer</span>
+              <span className="text-faint">•</span>
+              <span className="flex items-center gap-1 text-[#eaf0eb]">
+                <MapPin className="w-3 h-3 text-accent" />
                 {personalInfo.location}
               </span>
-            </div>
+            </motion.div>
 
             {/* Headline */}
-            <div className="space-y-3">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-charcoal-900 leading-[1.12]">
-                Hi, I'm <span className="text-charcoal-900">{personalInfo.name}</span>.
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="space-y-3"
+            >
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#eaf0eb] leading-[1.14]">
+                Hi, I'm <span className="text-[#eaf0eb]">{personalInfo.name}</span>.
                 <br />
-                <span className="text-charcoal-600 font-bold text-3xl sm:text-4xl lg:text-5xl">
-                  {personalInfo.title}
+                <span className="text-accent font-semibold text-2xl sm:text-3xl lg:text-4xl flex items-center gap-2 mt-1">
+                  <span>{personalInfo.title}</span>
+                  <Sparkles className="w-5 h-5 text-accent animate-pulse inline" />
                 </span>
               </h1>
-              <p className="text-lg sm:text-xl text-charcoal-600 max-w-2xl leading-relaxed pt-2">
-                Specialized in building high-performance web applications, enterprise dashboards, and AI-driven platforms with <span className="text-charcoal-900 font-semibold">React</span>, <span className="text-charcoal-900 font-semibold">Next.js</span>, and <span className="text-charcoal-900 font-semibold">TypeScript</span>, backed by developing full-stack expertise in <span className="text-charcoal-900 font-semibold">Python</span> and <span className="text-charcoal-900 font-semibold">AWS</span>.
+              <p className="text-base sm:text-lg text-[#8d9e91] max-w-2xl leading-relaxed pt-2">
+                4 years engineering high-performance web applications, enterprise dashboards, and AI-driven platforms with <strong className="text-[#eaf0eb] font-semibold">React, Next.js, TypeScript, and modern UI architectures</strong>.
               </p>
-            </div>
+            </motion.div>
 
-            {/* Metric / Highlights Bar */}
-            <div className="flex flex-wrap items-center gap-6 pt-2 text-sm text-charcoal-700">
+            {/* Metric Highlights */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-wrap items-center gap-5 sm:gap-6 pt-1 text-xs font-mono text-[#8d9e91]"
+            >
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-accent-50 text-accent-700 flex items-center justify-center font-bold text-xs">
-                  5+
-                </div>
+                <span className="font-bold text-sm text-[#eaf0eb] bg-[#0f1511] border border-[#1d2820] px-2.5 py-0.5 rounded-md shadow-sm">4</span>
                 <span>Years Experience</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-xs">
-                  6+
-                </div>
-                <span>Enterprise & AI Platforms</span>
+                <span className="font-bold text-sm text-[#eaf0eb] bg-[#0f1511] border border-[#1d2820] px-2.5 py-0.5 rounded-md shadow-sm">6+</span>
+                <span>Production Platforms</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold text-xs">
-                  ✓
-                </div>
-                <span>Type-Safe UI Architecture</span>
+                <span className="text-accent">✓</span>
+                <span className="text-[#eaf0eb]">100% Frontend Focus</span>
               </div>
-            </div>
+            </motion.div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-4">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="flex flex-wrap items-center gap-3 pt-3"
+            >
               <a
                 href="#projects"
                 onClick={(e) => {
                   e.preventDefault();
                   document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-charcoal-900 text-white font-medium text-sm hover:bg-accent-700 transition-all shadow-subtle hover:shadow group"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-accent text-[#080c09] font-mono text-xs uppercase tracking-wider font-bold hover:bg-accent-light transition-all shadow-glow hover:scale-105 active:scale-95 group"
               >
                 <span>View Featured Projects</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </a>
+
+              <a
+                href="#blog"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#blog')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[#1d2820] bg-[#0f1511] text-[#8d9e91] font-mono text-xs uppercase tracking-wider hover:text-[#eaf0eb] hover:border-accent/40 transition-all shadow-subtle hover:scale-105 active:scale-95"
+              >
+                <span>Technical Blog</span>
+                <span className="text-accent">→</span>
               </a>
 
               <a
                 href={personalInfo.cvPath}
                 download="Asmita-Kafle-CV.pdf"
-                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-charcoal-300 text-charcoal-800 bg-white font-medium text-sm hover:bg-charcoal-100 hover:border-charcoal-400 transition-all shadow-subtle"
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-full border border-[#1d2820] bg-[#0f1511]/70 text-[#8d9e91] font-mono text-xs uppercase tracking-wider hover:text-[#eaf0eb] hover:border-accent/40 transition-all shadow-subtle hover:scale-105 active:scale-95"
               >
-                <FileDown className="w-4 h-4 text-charcoal-600" />
-                <span>Download CV</span>
+                <FileDown className="w-3.5 h-3.5 text-accent" />
+                <span>CV</span>
               </a>
+            </motion.div>
 
+            {/* Social Links Row including Medium */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="pt-2 flex items-center gap-3 text-[#8d9e91] text-xs font-mono"
+            >
+              <span className="uppercase tracking-wider text-faint">CONNECT:</span>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-charcoal-200 text-charcoal-700 bg-white/70 font-medium text-sm hover:bg-white transition-all shadow-subtle"
+                href={personalInfo.medium}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-full border border-[#1d2820] bg-[#0f1511] text-[#8d9e91] hover:text-[#eaf0eb] hover:border-accent/40 hover:scale-110 transition-all"
+                title="Read my articles on Medium (@asmita.kafle67)"
               >
-                <Mail className="w-4 h-4 text-accent-600" />
-                <span>Contact</span>
+                <MediumIcon className="w-4 h-4 text-accent" />
               </a>
-            </div>
-
-            {/* Social links row */}
-            <div className="pt-2 flex items-center gap-4 text-charcoal-500">
-              <span className="text-xs font-mono uppercase tracking-wider text-charcoal-400">Connect:</span>
               <a
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-1.5 rounded-lg text-charcoal-600 hover:text-charcoal-900 hover:bg-charcoal-100 transition-colors"
-                title="GitHub Profile (Placeholder URL)"
+                className="p-2.5 rounded-full border border-[#1d2820] bg-[#0f1511] text-[#8d9e91] hover:text-[#eaf0eb] hover:border-accent/40 hover:scale-110 transition-all"
+                title="GitHub Profile"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-4 h-4" />
               </a>
               <a
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-1.5 rounded-lg text-charcoal-600 hover:text-charcoal-900 hover:bg-charcoal-100 transition-colors"
-                title="LinkedIn Profile (Placeholder URL)"
+                className="p-2.5 rounded-full border border-[#1d2820] bg-[#0f1511] text-[#8d9e91] hover:text-[#eaf0eb] hover:border-accent/40 hover:scale-110 transition-all"
+                title="LinkedIn Profile"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="p-1.5 rounded-lg text-charcoal-600 hover:text-charcoal-900 hover:bg-charcoal-100 transition-colors"
+                className="p-2.5 rounded-full border border-[#1d2820] bg-[#0f1511] text-[#8d9e91] hover:text-[#eaf0eb] hover:border-accent/40 hover:scale-110 transition-all"
                 title={`Email: ${personalInfo.email}`}
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-4 h-4" />
               </a>
-            </div>
+            </motion.div>
           </motion.div>
 
-          {/* Right Card / Interactive Terminal Card */}
+          {/* Right Column: Animated Floating Frontend Config Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="lg:col-span-4"
+            animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
+            transition={{
+              opacity: { duration: 0.6, delay: 0.2 },
+              scale: { duration: 0.6, delay: 0.2 },
+              y: { repeat: Infinity, duration: 6, ease: 'easeInOut' },
+            }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.25 } }}
+            className="lg:col-span-5 glow-card"
           >
-            <div className="rounded-2xl bg-white border border-charcoal-200/90 shadow-card p-6 space-y-5">
-              <div className="flex items-center justify-between pb-3 border-b border-charcoal-100">
+            <div className="rounded-3xl bg-[#0f1511] border border-[#1d2820] shadow-card p-6 sm:p-7 space-y-5 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-36 h-36 bg-accent/10 rounded-full blur-2xl pointer-events-none" />
+
+              <div className="flex items-center justify-between pb-3.5 border-b border-[#1d2820] relative z-10">
                 <div className="flex items-center gap-2">
-                  <div className="p-1.5 rounded-md bg-accent-50 text-accent-700">
+                  <div className="p-1.5 rounded-lg bg-accent/10 text-accent">
                     <Terminal className="w-4 h-4" />
                   </div>
-                  <span className="text-xs font-mono font-semibold text-charcoal-800">developer.config</span>
+                  <span className="text-xs font-mono font-semibold text-[#eaf0eb]">frontend.config.ts</span>
                 </div>
-                <span className="text-[11px] font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
-                  active
+                <span className="text-[10px] font-mono text-accent bg-accent/10 px-2.5 py-0.5 rounded-full border border-accent/20 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                  client-active
                 </span>
               </div>
 
-              <div className="space-y-3 font-mono text-xs">
+              <div className="space-y-2.5 font-mono text-xs relative z-10">
                 <div>
-                  <span className="text-charcoal-400">const</span>{' '}
-                  <span className="text-accent-700 font-semibold">engineer</span> = &#123;
+                  <span className="text-faint">export const</span>{' '}
+                  <span className="text-accent font-semibold">frontendEngineer</span> = &#123;
                 </div>
-                <div className="pl-4 space-y-1.5 text-charcoal-700">
+                <div className="pl-4 space-y-1.5 text-[#8d9e91]">
                   <div>
-                    <span className="text-charcoal-400">name:</span>{' '}
-                    <span className="text-emerald-700">"{personalInfo.name}"</span>,
+                    <span className="text-faint">name:</span>{' '}
+                    <span className="text-[#eaf0eb]">"{personalInfo.name}"</span>,
                   </div>
                   <div>
-                    <span className="text-charcoal-400">focus:</span>{' '}
-                    <span className="text-emerald-700">"React & Next.js"</span>,
+                    <span className="text-faint">specialization:</span>{' '}
+                    <span className="text-[#eaf0eb]">"React & Next.js Ecosystem"</span>,
                   </div>
                   <div>
-                    <span className="text-charcoal-400">experience:</span>{' '}
-                    <span className="text-amber-700">"5+ years"</span>,
+                    <span className="text-faint">experience:</span>{' '}
+                    <span className="text-accent">"4 years"</span>,
                   </div>
                   <div>
-                    <span className="text-charcoal-400">currentRole:</span>{' '}
-                    <span className="text-emerald-700">"Frontend Developer @ Qsystems AI"</span>,
+                    <span className="text-faint">coreStack:</span> [
+                    <span className="text-[#eaf0eb]">"TypeScript"</span>,{' '}
+                    <span className="text-[#eaf0eb]">"Tailwind"</span>,{' '}
+                    <span className="text-[#eaf0eb]">"Zustand"</span>],
                   </div>
                   <div>
-                    <span className="text-charcoal-400">backendSkills:</span> [
-                    <span className="text-charcoal-600">"Python"</span>,{' '}
-                    <span className="text-charcoal-600">"FastAPI"</span>,{' '}
-                    <span className="text-charcoal-600">"PostgreSQL"</span>],
+                    <span className="text-faint">realtime:</span>{' '}
+                    <span className="text-[#eaf0eb]">"WebSockets & Live UIs"</span>,
                   </div>
                   <div>
-                    <span className="text-charcoal-400">cloud:</span> [
-                    <span className="text-charcoal-600">"AWS"</span>,{' '}
-                    <span className="text-charcoal-600">"Amplify"</span>],
+                    <span className="text-faint">articles:</span>{' '}
+                    <a
+                      href={personalInfo.medium}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent hover:underline inline-flex items-center gap-1"
+                    >
+                      "medium.com/@asmita.kafle67"
+                    </a>,
                   </div>
                 </div>
                 <div>&#125;;</div>
               </div>
 
-              <div className="pt-3 border-t border-charcoal-100 space-y-2 text-xs">
-                <div className="flex items-center gap-2 text-charcoal-700">
-                  <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+              <div className="pt-3 border-t border-[#1d2820] space-y-2 text-xs relative z-10">
+                <div className="flex items-center gap-2 text-[#8d9e91]">
+                  <CheckCircle className="w-3.5 h-3.5 text-accent shrink-0" />
                   <span>Real-time WebSocket Scheduling UIs</span>
                 </div>
-                <div className="flex items-center gap-2 text-charcoal-700">
-                  <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <div className="flex items-center gap-2 text-[#8d9e91]">
+                  <CheckCircle className="w-3.5 h-3.5 text-accent shrink-0" />
                   <span>Enterprise Dashboards & AI Interfaces</span>
                 </div>
-                <div className="flex items-center gap-2 text-charcoal-700">
-                  <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>Modern, Maintainable Component Systems</span>
+                <div className="flex items-center gap-2 text-[#8d9e91]">
+                  <CheckCircle className="w-3.5 h-3.5 text-accent shrink-0" />
+                  <span>Component Systems with Mantine & shadcn</span>
                 </div>
               </div>
             </div>

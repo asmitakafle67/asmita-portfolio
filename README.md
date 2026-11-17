@@ -1,8 +1,12 @@
 # Asmita Kafle — Personal Portfolio
 
-A modern, minimalist personal portfolio website built from scratch with **React 18**, **TypeScript**, **Vite**, **Tailwind CSS**, and **Framer Motion**.
+An editorial, high-performance personal portfolio website built with **React 18**, **TypeScript**, **Vite**, **Tailwind CSS**, and **Framer Motion**.
 
-Designed with inspiration from Linear and Vercel: light aesthetic with warm off-white tones (`#FAF9F6`), dark charcoal typography (`#121316`), and sophisticated royal blue accents.
+### Highlights:
+- **Floating Cosmic Nav (inspired by [rosan.me](https://rosan.me))**: Fixed floating pill navigation with numbered sections and smooth active states.
+- **Real Front Page Captures**: Live browser preview captures for all 6 featured enterprise platforms.
+- **Frontend-Specialized**: 100% focused on modern frontend engineering, component architecture, and responsive UX.
+- **Writing & Medium**: Technical blog area integrated with Asmita's Medium publication ([@asmita.kafle67](https://medium.com/@asmita.kafle67)).
 
 ---
 
