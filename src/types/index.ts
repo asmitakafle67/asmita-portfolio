@@ -42,3 +42,16 @@ export interface Education {
   isOngoing?: boolean;
 }
 
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  author: string;
+  date: string;
+  readTime: string;
+  category: string;
+  topics: string[];
+  excerpt: string;
+  content: string;
+}
+

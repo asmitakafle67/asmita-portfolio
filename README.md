@@ -43,15 +43,19 @@ npm run preview
 │   │   ├── Navbar.tsx          # Sticky glassmorphism header & mobile navigation
 │   │   ├── SectionHeading.tsx  # Consistent typography and category tags
 │   │   ├── ProjectCard.tsx     # Card with UI mockups, tech pills & live links
+│   │   ├── BlogCard.tsx        # Card with read time, category & topic tags
+│   │   ├── BlogReaderModal.tsx # Reader modal with progress bar & copyable code blocks
 │   │   └── Footer.tsx          # Minimalist footer with quick navigation
 │   ├── data/
-│   │   └── portfolioData.ts    # Single source of truth for projects, skills & bio
+│   │   ├── portfolioData.ts    # Single source of truth for projects, skills & bio
+│   │   └── blogData.ts         # Technical articles and engineering guides
 │   ├── sections/
 │   │   ├── Hero.tsx            # Intro, stats, terminal config card & CTAs
 │   │   ├── About.tsx           # Narrative bio and core engineering pillars
 │   │   ├── Experience.tsx      # Chronological career timeline
 │   │   ├── Projects.tsx        # Filterable commercial & AI project grid
 │   │   ├── Skills.tsx          # Categorized competencies with proficiency indicators
+│   │   ├── Blog.tsx            # Blog section with topic filters & reader modal
 │   │   ├── Education.tsx       # B.E. Computer Engineering & MBA credentials
 │   │   └── Contact.tsx         # Functional email link, copy button & mailto form
 │   ├── types/
@@ -74,6 +78,9 @@ npm run preview
 2. **Custom CV**:
    Replace [`public/Asmita-Kafle-CV.pdf`](file:///c:/Github%20project/Asmita%20Kafle%20Portfolio/public/Asmita-Kafle-CV.pdf) with your updated resume PDF.
 
-3. **Project Screenshots**:
+3. **Adding New Blog Articles**:
+   Add new entries to the `blogPosts` array in [`src/data/blogData.ts`](file:///c:/Github%20project/Asmita%20Kafle%20Portfolio/src/data/blogData.ts). You can write articles directly in standard Markdown with full support for tables, lists, and multi-language code snippets.
+
+4. **Project Screenshots**:
    Place screenshots in `public/images/` and easily embed them in [`src/components/ProjectCard.tsx`](file:///c:/Github%20project/Asmita%20Kafle%20Portfolio/src/components/ProjectCard.tsx).
 

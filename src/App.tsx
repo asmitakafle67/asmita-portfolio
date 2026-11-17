@@ -6,6 +6,7 @@ import { About } from './sections/About';
 import { ExperienceSection } from './sections/Experience';
 import { ProjectsSection } from './sections/Projects';
 import { SkillsSection } from './sections/Skills';
+import { BlogSection } from './sections/Blog';
 import { EducationSection } from './sections/Education';
 import { ContactSection } from './sections/Contact';
 import { Footer } from './components/Footer';
@@ -44,6 +45,7 @@ export const App: React.FC = () => {
           <ExperienceSection />
           <ProjectsSection />
           <SkillsSection />
+          <BlogSection />
           <EducationSection />
           <ContactSection />
         </main>
