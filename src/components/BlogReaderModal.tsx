@@ -66,21 +66,21 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ post, onClose 
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="fixed inset-0 z-50 overflow-hidden flex flex-col bg-[#080c09]/95 backdrop-blur-xl"
+        className="fixed inset-0 z-50 overflow-hidden flex flex-col bg-[#06080e]/95 backdrop-blur-xl"
       >
         {/* Top Reading Progress Bar */}
-        <div className="fixed top-0 left-0 right-0 h-1 bg-[#1d2820] z-50">
+        <div className="fixed top-0 left-0 right-0 h-1 bg-[#1e2638] z-50">
           <div
-            className="h-full bg-accent shadow-[0_0_10px_#76d39c] transition-all duration-150 ease-out"
+            className="h-full bg-accent shadow-[0_0_10px_#38bdf8] transition-all duration-150 ease-out"
             style={{ width: `${scrollProgress}%` }}
           />
         </div>
 
         {/* Sticky Header Nav */}
-        <header className="sticky top-0 z-40 bg-[#0f1511]/90 backdrop-blur border-b border-[#1d2820] px-4 sm:px-8 py-3.5 flex items-center justify-between">
+        <header className="sticky top-0 z-40 bg-[#0e121e]/90 backdrop-blur border-b border-[#1e2638] px-4 sm:px-8 py-3.5 flex items-center justify-between">
           <button
             onClick={onClose}
-            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.08em] text-[#eaf0eb] hover:text-accent px-3 py-1.5 rounded-xl border border-[#1d2820] bg-[#080c09] hover:border-accent/40 transition-colors shadow-subtle"
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.08em] text-[#f8fafc] hover:text-accent px-3 py-1.5 rounded-xl border border-[#1e2638] bg-[#06080e] hover:border-accent/40 transition-colors shadow-subtle"
           >
             <ArrowLeft className="w-3.5 h-3.5 text-accent" />
             <span>Back to Portfolio</span>
@@ -89,7 +89,7 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ post, onClose 
           <div className="flex items-center gap-3">
             <button
               onClick={handleCopyLink}
-              className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.08em] text-[#8d9e91] hover:text-[#eaf0eb] px-3 py-1.5 rounded-xl border border-[#1d2820] bg-[#080c09] hover:border-accent/40 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.08em] text-[#94a3b8] hover:text-[#f8fafc] px-3 py-1.5 rounded-xl border border-[#1e2638] bg-[#06080e] hover:border-accent/40 transition-colors"
               title="Share article link"
             >
               {copiedLink ? (
@@ -107,7 +107,7 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ post, onClose 
 
             <button
               onClick={onClose}
-              className="p-1.5 rounded-xl text-[#8d9e91] hover:text-[#eaf0eb] hover:bg-[#16201a] border border-transparent hover:border-[#1d2820] transition-colors"
+              className="p-1.5 rounded-xl text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#161c2e] border border-transparent hover:border-[#1e2638] transition-colors"
               aria-label="Close article"
             >
               <X className="w-5 h-5" />
@@ -123,14 +123,14 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ post, onClose 
         >
           <div className="max-w-3xl mx-auto">
             {/* Header Meta */}
-            <div className="pb-8 border-b border-[#1d2820] mb-10 space-y-4">
+            <div className="pb-8 border-b border-[#1e2638] mb-10 space-y-4">
               <div className="flex flex-wrap items-center gap-2.5">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent font-mono font-semibold uppercase text-xs border border-accent/25">
                   <BookOpen className="w-3.5 h-3.5" />
                   {post.category}
                 </span>
 
-                <div className="flex items-center gap-2 text-xs font-mono text-[#8d9e91]">
+                <div className="flex items-center gap-2 text-xs font-mono text-[#94a3b8]">
                   <span className="flex items-center gap-1">
                     <Calendar className="w-3.5 h-3.5 text-accent" />
                     {post.date}
@@ -145,14 +145,14 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ post, onClose 
 
               {/* Author Row */}
               <div className="flex items-center gap-3 pt-1">
-                <div className="w-9 h-9 rounded-xl bg-accent text-[#080c09] flex items-center justify-center font-mono font-bold text-xs shadow-subtle">
+                <div className="w-9 h-9 rounded-xl bg-accent text-[#06080e] flex items-center justify-center font-mono font-bold text-xs shadow-subtle">
                   AK
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-[#eaf0eb] flex items-center gap-1.5">
+                  <div className="text-sm font-bold text-[#f8fafc] flex items-center gap-1.5">
                     <span>{post.author}</span>
                   </div>
-                  <div className="text-xs text-[#8d9e91]">
+                  <div className="text-xs text-[#94a3b8]">
                     Software Developer • Frontend Specialist
                   </div>
                 </div>
@@ -163,7 +163,7 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ post, onClose 
                 {post.topics.map((topic) => (
                   <span
                     key={topic}
-                    className="inline-flex items-center gap-1 text-[11px] font-mono px-2.5 py-0.5 rounded-lg bg-[#0f1511] text-[#8d9e91] border border-[#1d2820]"
+                    className="inline-flex items-center gap-1 text-[11px] font-mono px-2.5 py-0.5 rounded-lg bg-[#0e121e] text-[#94a3b8] border border-[#1e2638]"
                   >
                     <Tag className="w-2.5 h-2.5 text-accent" />
                     {topic}
@@ -173,39 +173,39 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ post, onClose 
             </div>
 
             {/* Markdown Body */}
-            <article className="prose prose-invert max-w-none text-[#c2d1c6] leading-relaxed">
+            <article className="prose prose-invert max-w-none text-[#cbd5e1] leading-relaxed">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
                   // Custom headings
                   h1: ({ children }) => (
-                    <h1 className="text-3xl sm:text-4xl font-extrabold text-[#eaf0eb] tracking-tight mb-8 leading-tight font-display">
+                    <h1 className="text-3xl sm:text-4xl font-extrabold text-[#f8fafc] tracking-tight mb-8 leading-tight font-display">
                       {children}
                     </h1>
                   ),
                   h2: ({ children }) => (
-                    <h2 className="text-2xl font-bold text-[#eaf0eb] tracking-tight mt-12 mb-4 pt-6 border-t border-[#1d2820] font-display flex items-center gap-2">
+                    <h2 className="text-2xl font-bold text-[#f8fafc] tracking-tight mt-12 mb-4 pt-6 border-t border-[#1e2638] font-display flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-accent inline-block" />
                       {children}
                     </h2>
                   ),
                   h3: ({ children }) => (
-                    <h3 className="text-lg font-bold text-[#eaf0eb] tracking-tight mt-6 mb-3 font-display">
+                    <h3 className="text-lg font-bold text-[#f8fafc] tracking-tight mt-6 mb-3 font-display">
                       {children}
                     </h3>
                   ),
                   p: ({ children }) => (
-                    <p className="text-base text-[#c2d1c6] leading-relaxed my-4">
+                    <p className="text-base text-[#cbd5e1] leading-relaxed my-4">
                       {children}
                     </p>
                   ),
                   ul: ({ children }) => (
-                    <ul className="list-disc list-outside pl-6 my-4 space-y-1.5 text-[#c2d1c6]">
+                    <ul className="list-disc list-outside pl-6 my-4 space-y-1.5 text-[#cbd5e1]">
                       {children}
                     </ul>
                   ),
                   ol: ({ children }) => (
-                    <ol className="list-decimal list-outside pl-6 my-4 space-y-1.5 text-[#c2d1c6]">
+                    <ol className="list-decimal list-outside pl-6 my-4 space-y-1.5 text-[#cbd5e1]">
                       {children}
                     </ol>
                   ),
@@ -213,39 +213,39 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ post, onClose 
                     <li className="leading-relaxed">{children}</li>
                   ),
                   blockquote: ({ children }) => (
-                    <blockquote className="border-l-4 border-accent bg-[#0f1511] p-4 rounded-r-2xl my-6 text-[#eaf0eb] italic border-t border-b border-r border-[#1d2820]">
+                    <blockquote className="border-l-4 border-accent bg-[#0e121e] p-4 rounded-r-2xl my-6 text-[#f8fafc] italic border-t border-b border-r border-[#1e2638]">
                       {children}
                     </blockquote>
                   ),
                   table: ({ children }) => (
-                    <div className="overflow-x-auto my-6 rounded-2xl border border-[#1d2820] shadow-subtle">
-                      <table className="w-full text-left text-sm border-collapse bg-[#0f1511]">
+                    <div className="overflow-x-auto my-6 rounded-2xl border border-[#1e2638] shadow-subtle">
+                      <table className="w-full text-left text-sm border-collapse bg-[#0e121e]">
                         {children}
                       </table>
                     </div>
                   ),
                   thead: ({ children }) => (
-                    <thead className="bg-[#16201a] text-accent font-mono text-xs uppercase border-b border-[#1d2820]">
+                    <thead className="bg-[#161c2e] text-accent font-mono text-xs uppercase border-b border-[#1e2638]">
                       {children}
                     </thead>
                   ),
                   tbody: ({ children }) => (
-                    <tbody className="divide-y divide-[#1d2820]">
+                    <tbody className="divide-y divide-[#1e2638]">
                       {children}
                     </tbody>
                   ),
                   tr: ({ children }) => (
-                    <tr className="hover:bg-[#16201a]/50 transition-colors">
+                    <tr className="hover:bg-[#161c2e]/50 transition-colors">
                       {children}
                     </tr>
                   ),
                   th: ({ children }) => (
-                    <th className="px-4 py-3 font-semibold text-[#eaf0eb]">
+                    <th className="px-4 py-3 font-semibold text-[#f8fafc]">
                       {children}
                     </th>
                   ),
                   td: ({ children }) => (
-                    <td className="px-4 py-3 text-[#c2d1c6] text-xs sm:text-sm font-mono">
+                    <td className="px-4 py-3 text-[#cbd5e1] text-xs sm:text-sm font-mono">
                       {children}
                     </td>
                   ),
@@ -255,7 +255,7 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ post, onClose 
                     
                     if (inline) {
                       return (
-                        <code className="bg-[#0f1511] text-accent font-mono text-xs px-2 py-0.5 rounded-md border border-[#1d2820] font-semibold" {...props}>
+                        <code className="bg-[#0e121e] text-accent font-mono text-xs px-2 py-0.5 rounded-md border border-[#1e2638] font-semibold" {...props}>
                           {children}
                         </code>
                       );
@@ -272,17 +272,17 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ post, onClose 
             </article>
 
             {/* Author Footer Card */}
-            <div className="mt-16 pt-8 border-t border-[#1d2820]">
-              <div className="p-6 sm:p-8 rounded-3xl bg-[#0f1511] border border-[#1d2820] shadow-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="mt-16 pt-8 border-t border-[#1e2638]">
+              <div className="p-6 sm:p-8 rounded-3xl bg-[#0e121e] border border-[#1e2638] shadow-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-12 h-12 rounded-2xl bg-accent text-[#080c09] flex items-center justify-center font-mono font-bold text-base shadow-sm">
+                  <div className="w-12 h-12 rounded-2xl bg-accent text-[#06080e] flex items-center justify-center font-mono font-bold text-base shadow-sm">
                     AK
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-[#eaf0eb]">
+                    <h4 className="text-base font-bold text-[#f8fafc]">
                       Written by {post.author}
                     </h4>
-                    <p className="text-xs text-[#8d9e91] mt-0.5">
+                    <p className="text-xs text-[#94a3b8] mt-0.5">
                       Software Developer specializing in React, Next.js, TypeScript, and modern web architectures.
                     </p>
                   </div>
@@ -299,7 +299,7 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ post, onClose 
                   </a>
                   <button
                     onClick={onClose}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-accent text-[#080c09] text-xs font-semibold hover:bg-[#8ee4b1] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-accent text-[#06080e] text-xs font-semibold hover:bg-accent-light transition-colors"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
                     <span>Back</span>
@@ -325,13 +325,13 @@ const CodeBlock: React.FC<{ language: string; code: string }> = ({ language, cod
   };
 
   return (
-    <div className="my-6 rounded-2xl overflow-hidden border border-[#1d2820] bg-[#0a0e0b] text-[#eaf0eb] shadow-card">
+    <div className="my-6 rounded-2xl overflow-hidden border border-[#1e2638] bg-[#0a0d17] text-[#f8fafc] shadow-card">
       {/* Code Header Bar */}
-      <div className="flex items-center justify-between px-4 py-2.5 bg-[#0f1511] border-b border-[#1d2820] text-xs font-mono text-[#8d9e91]">
+      <div className="flex items-center justify-between px-4 py-2.5 bg-[#0e121e] border-b border-[#1e2638] text-xs font-mono text-[#94a3b8]">
         <div className="flex items-center gap-2">
           <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#1d2820]" />
-            <span className="w-2.5 h-2.5 rounded-full bg-[#1d2820]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#1e2638]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#1e2638]" />
             <span className="w-2.5 h-2.5 rounded-full bg-accent/40" />
           </div>
           <span className="text-[11px] uppercase tracking-wider text-accent ml-2">
@@ -340,7 +340,7 @@ const CodeBlock: React.FC<{ language: string; code: string }> = ({ language, cod
         </div>
         <button
           onClick={handleCopy}
-          className="flex items-center gap-1.5 text-xs text-[#8d9e91] hover:text-[#eaf0eb] transition-colors px-2.5 py-1 rounded-lg hover:bg-[#16201a] border border-transparent hover:border-[#1d2820]"
+          className="flex items-center gap-1.5 text-xs text-[#94a3b8] hover:text-[#f8fafc] transition-colors px-2.5 py-1 rounded-lg hover:bg-[#161c2e] border border-transparent hover:border-[#1e2638]"
           title="Copy code"
         >
           {copied ? (
@@ -358,7 +358,7 @@ const CodeBlock: React.FC<{ language: string; code: string }> = ({ language, cod
       </div>
 
       {/* Code Area */}
-      <pre className="p-4 sm:p-5 overflow-x-auto text-xs sm:text-sm font-mono text-[#eaf0eb] leading-relaxed">
+      <pre className="p-4 sm:p-5 overflow-x-auto text-xs sm:text-sm font-mono text-[#f8fafc] leading-relaxed">
         <code>{code}</code>
       </pre>
     </div>

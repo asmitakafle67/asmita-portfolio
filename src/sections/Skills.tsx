@@ -100,7 +100,7 @@ export const SkillsSection: React.FC = () => {
                       whileHover={{ x: 4, transition: { duration: 0.15 } }}
                       className={`flex items-center justify-between p-3 rounded-xl border transition-all ${
                         skill.highlight
-                          ? 'bg-paper/70 border-hairline hover:border-accent/40 hover:bg-[#16201a]/60'
+                          ? 'bg-paper/70 border-hairline hover:border-accent/40 hover:bg-[#161c2e]/60'
                           : 'bg-paper/30 border-hairline/60 hover:border-hairline hover:bg-paper/50'
                       }`}
                     >

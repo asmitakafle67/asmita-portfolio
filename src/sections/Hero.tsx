@@ -23,9 +23,9 @@ export const Hero: React.FC = () => {
 
       {/* Subtle architectural dark grid */}
       <div 
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        className="absolute inset-0 opacity-[0.035] pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(#76d39c 1px, transparent 1px), linear-gradient(to right, #76d39c 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(#38bdf8 1px, transparent 1px), linear-gradient(to right, #38bdf8 1px, transparent 1px)`,
           backgroundSize: '48px 48px',
         }}
       />
@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0f1511] border border-[#1d2820] shadow-sm font-mono text-xs text-[#8d9e91]"
+              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0e121e] border border-[#1e2638] shadow-sm font-mono text-xs text-[#94a3b8]"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
@@ -52,7 +52,7 @@ export const Hero: React.FC = () => {
               </span>
               <span>Specialized Frontend Developer</span>
               <span className="text-faint">•</span>
-              <span className="flex items-center gap-1 text-[#eaf0eb]">
+              <span className="flex items-center gap-1 text-[#f8fafc]">
                 <MapPin className="w-3 h-3 text-accent" />
                 {personalInfo.location}
               </span>
@@ -65,16 +65,16 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="space-y-3"
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#eaf0eb] leading-[1.14]">
-                Hi, I'm <span className="text-[#eaf0eb]">{personalInfo.name}</span>.
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#f8fafc] leading-[1.14]">
+                Hi, I'm <span className="text-[#f8fafc]">{personalInfo.name}</span>.
                 <br />
                 <span className="text-accent font-semibold text-2xl sm:text-3xl lg:text-4xl flex items-center gap-2 mt-1">
                   <span>{personalInfo.title}</span>
                   <Sparkles className="w-5 h-5 text-accent animate-pulse inline" />
                 </span>
               </h1>
-              <p className="text-base sm:text-lg text-[#8d9e91] max-w-2xl leading-relaxed pt-2">
-                4 years engineering high-performance web applications, enterprise dashboards, and AI-driven platforms with <strong className="text-[#eaf0eb] font-semibold">React, Next.js, TypeScript, and modern UI architectures</strong>.
+              <p className="text-base sm:text-lg text-[#94a3b8] max-w-2xl leading-relaxed pt-2">
+                4 years engineering high-performance web applications, enterprise dashboards, and AI-driven platforms with <strong className="text-[#f8fafc] font-semibold">React, Next.js, TypeScript, and modern UI architectures</strong>.
               </p>
             </motion.div>
 
@@ -83,19 +83,19 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-wrap items-center gap-5 sm:gap-6 pt-1 text-xs font-mono text-[#8d9e91]"
+              className="flex flex-wrap items-center gap-5 sm:gap-6 pt-1 text-xs font-mono text-[#94a3b8]"
             >
               <div className="flex items-center gap-2">
-                <span className="font-bold text-sm text-[#eaf0eb] bg-[#0f1511] border border-[#1d2820] px-2.5 py-0.5 rounded-md shadow-sm">4</span>
+                <span className="font-bold text-sm text-[#f8fafc] bg-[#0e121e] border border-[#1e2638] px-2.5 py-0.5 rounded-md shadow-sm">4</span>
                 <span>Years Experience</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="font-bold text-sm text-[#eaf0eb] bg-[#0f1511] border border-[#1d2820] px-2.5 py-0.5 rounded-md shadow-sm">6+</span>
+                <span className="font-bold text-sm text-[#f8fafc] bg-[#0e121e] border border-[#1e2638] px-2.5 py-0.5 rounded-md shadow-sm">6+</span>
                 <span>Production Platforms</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-accent">✓</span>
-                <span className="text-[#eaf0eb]">100% Frontend Focus</span>
+                <span className="text-[#f8fafc]">100% Frontend Focus</span>
               </div>
             </motion.div>
 
@@ -112,7 +112,7 @@ export const Hero: React.FC = () => {
                   e.preventDefault();
                   document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-accent text-[#080c09] font-mono text-xs uppercase tracking-wider font-bold hover:bg-accent-light transition-all shadow-glow hover:scale-105 active:scale-95 group"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-accent text-[#06080e] font-mono text-xs uppercase tracking-wider font-bold hover:bg-accent-light transition-all shadow-glow hover:scale-105 active:scale-95 group"
               >
                 <span>View Featured Projects</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -124,7 +124,7 @@ export const Hero: React.FC = () => {
                   e.preventDefault();
                   document.querySelector('#blog')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[#1d2820] bg-[#0f1511] text-[#8d9e91] font-mono text-xs uppercase tracking-wider hover:text-[#eaf0eb] hover:border-accent/40 transition-all shadow-subtle hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[#1e2638] bg-[#0e121e] text-[#94a3b8] font-mono text-xs uppercase tracking-wider hover:text-[#f8fafc] hover:border-accent/40 transition-all shadow-subtle hover:scale-105 active:scale-95"
               >
                 <span>Technical Blog</span>
                 <span className="text-accent">→</span>
@@ -133,7 +133,7 @@ export const Hero: React.FC = () => {
               <a
                 href={personalInfo.cvPath}
                 download="Asmita-Kafle-CV.pdf"
-                className="inline-flex items-center gap-2 px-4 py-3 rounded-full border border-[#1d2820] bg-[#0f1511]/70 text-[#8d9e91] font-mono text-xs uppercase tracking-wider hover:text-[#eaf0eb] hover:border-accent/40 transition-all shadow-subtle hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-full border border-[#1e2638] bg-[#0e121e]/70 text-[#94a3b8] font-mono text-xs uppercase tracking-wider hover:text-[#f8fafc] hover:border-accent/40 transition-all shadow-subtle hover:scale-105 active:scale-95"
               >
                 <FileDown className="w-3.5 h-3.5 text-accent" />
                 <span>CV</span>
@@ -145,14 +145,14 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="pt-2 flex items-center gap-3 text-[#8d9e91] text-xs font-mono"
+              className="pt-2 flex items-center gap-3 text-[#94a3b8] text-xs font-mono"
             >
               <span className="uppercase tracking-wider text-faint">CONNECT:</span>
               <a
                 href={personalInfo.medium}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full border border-[#1d2820] bg-[#0f1511] text-[#8d9e91] hover:text-[#eaf0eb] hover:border-accent/40 hover:scale-110 transition-all"
+                className="p-2.5 rounded-full border border-[#1e2638] bg-[#0e121e] text-[#94a3b8] hover:text-[#f8fafc] hover:border-accent/40 hover:scale-110 transition-all"
                 title="Read my articles on Medium (@asmita.kafle67)"
               >
                 <MediumIcon className="w-4 h-4 text-accent" />
@@ -161,7 +161,7 @@ export const Hero: React.FC = () => {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full border border-[#1d2820] bg-[#0f1511] text-[#8d9e91] hover:text-[#eaf0eb] hover:border-accent/40 hover:scale-110 transition-all"
+                className="p-2.5 rounded-full border border-[#1e2638] bg-[#0e121e] text-[#94a3b8] hover:text-[#f8fafc] hover:border-accent/40 hover:scale-110 transition-all"
                 title="GitHub Profile"
               >
                 <Github className="w-4 h-4" />
@@ -170,14 +170,14 @@ export const Hero: React.FC = () => {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full border border-[#1d2820] bg-[#0f1511] text-[#8d9e91] hover:text-[#eaf0eb] hover:border-accent/40 hover:scale-110 transition-all"
+                className="p-2.5 rounded-full border border-[#1e2638] bg-[#0e121e] text-[#94a3b8] hover:text-[#f8fafc] hover:border-accent/40 hover:scale-110 transition-all"
                 title="LinkedIn Profile"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="p-2.5 rounded-full border border-[#1d2820] bg-[#0f1511] text-[#8d9e91] hover:text-[#eaf0eb] hover:border-accent/40 hover:scale-110 transition-all"
+                className="p-2.5 rounded-full border border-[#1e2638] bg-[#0e121e] text-[#94a3b8] hover:text-[#f8fafc] hover:border-accent/40 hover:scale-110 transition-all"
                 title={`Email: ${personalInfo.email}`}
               >
                 <Mail className="w-4 h-4" />
@@ -197,15 +197,15 @@ export const Hero: React.FC = () => {
             whileHover={{ scale: 1.02, transition: { duration: 0.25 } }}
             className="lg:col-span-5 glow-card"
           >
-            <div className="rounded-3xl bg-[#0f1511] border border-[#1d2820] shadow-card p-6 sm:p-7 space-y-5 relative overflow-hidden">
+            <div className="rounded-3xl bg-[#0e121e] border border-[#1e2638] shadow-card p-6 sm:p-7 space-y-5 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-36 h-36 bg-accent/10 rounded-full blur-2xl pointer-events-none" />
 
-              <div className="flex items-center justify-between pb-3.5 border-b border-[#1d2820] relative z-10">
+              <div className="flex items-center justify-between pb-3.5 border-b border-[#1e2638] relative z-10">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 rounded-lg bg-accent/10 text-accent">
                     <Terminal className="w-4 h-4" />
                   </div>
-                  <span className="text-xs font-mono font-semibold text-[#eaf0eb]">frontend.config.ts</span>
+                  <span className="text-xs font-mono font-semibold text-[#f8fafc]">frontend.config.ts</span>
                 </div>
                 <span className="text-[10px] font-mono text-accent bg-accent/10 px-2.5 py-0.5 rounded-full border border-accent/20 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
@@ -218,14 +218,14 @@ export const Hero: React.FC = () => {
                   <span className="text-faint">export const</span>{' '}
                   <span className="text-accent font-semibold">frontendEngineer</span> = &#123;
                 </div>
-                <div className="pl-4 space-y-1.5 text-[#8d9e91]">
+                <div className="pl-4 space-y-1.5 text-[#94a3b8]">
                   <div>
                     <span className="text-faint">name:</span>{' '}
-                    <span className="text-[#eaf0eb]">"{personalInfo.name}"</span>,
+                    <span className="text-[#f8fafc]">"{personalInfo.name}"</span>,
                   </div>
                   <div>
                     <span className="text-faint">specialization:</span>{' '}
-                    <span className="text-[#eaf0eb]">"React & Next.js Ecosystem"</span>,
+                    <span className="text-[#f8fafc]">"React & Next.js Ecosystem"</span>,
                   </div>
                   <div>
                     <span className="text-faint">experience:</span>{' '}
@@ -233,13 +233,13 @@ export const Hero: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-faint">coreStack:</span> [
-                    <span className="text-[#eaf0eb]">"TypeScript"</span>,{' '}
-                    <span className="text-[#eaf0eb]">"Tailwind"</span>,{' '}
-                    <span className="text-[#eaf0eb]">"Zustand"</span>],
+                    <span className="text-[#f8fafc]">"TypeScript"</span>,{' '}
+                    <span className="text-[#f8fafc]">"Tailwind"</span>,{' '}
+                    <span className="text-[#f8fafc]">"Zustand"</span>],
                   </div>
                   <div>
                     <span className="text-faint">realtime:</span>{' '}
-                    <span className="text-[#eaf0eb]">"WebSockets & Live UIs"</span>,
+                    <span className="text-[#f8fafc]">"WebSockets & Live UIs"</span>,
                   </div>
                   <div>
                     <span className="text-faint">articles:</span>{' '}
@@ -256,16 +256,16 @@ export const Hero: React.FC = () => {
                 <div>&#125;;</div>
               </div>
 
-              <div className="pt-3 border-t border-[#1d2820] space-y-2 text-xs relative z-10">
-                <div className="flex items-center gap-2 text-[#8d9e91]">
+              <div className="pt-3 border-t border-[#1e2638] space-y-2 text-xs relative z-10">
+                <div className="flex items-center gap-2 text-[#94a3b8]">
                   <CheckCircle className="w-3.5 h-3.5 text-accent shrink-0" />
                   <span>Real-time WebSocket Scheduling UIs</span>
                 </div>
-                <div className="flex items-center gap-2 text-[#8d9e91]">
+                <div className="flex items-center gap-2 text-[#94a3b8]">
                   <CheckCircle className="w-3.5 h-3.5 text-accent shrink-0" />
                   <span>Enterprise Dashboards & AI Interfaces</span>
                 </div>
-                <div className="flex items-center gap-2 text-[#8d9e91]">
+                <div className="flex items-center gap-2 text-[#94a3b8]">
                   <CheckCircle className="w-3.5 h-3.5 text-accent shrink-0" />
                   <span>Component Systems with Mantine & shadcn</span>
                 </div>

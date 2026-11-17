@@ -68,12 +68,12 @@ export const Navbar: React.FC = () => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className="group flex items-center gap-2.5 text-[#eaf0eb] font-semibold tracking-tight shrink-0"
+          className="group flex items-center gap-2.5 text-[#f8fafc] font-semibold tracking-tight shrink-0"
         >
-          <span className="w-8 h-8 rounded-full bg-[#16201a] border border-[#1d2820] text-accent flex items-center justify-center text-xs font-bold font-mono transition-transform duration-300 group-hover:scale-110 group-hover:border-accent/40 shadow-glow">
+          <span className="w-8 h-8 rounded-full bg-[#161c2e] border border-[#1e2638] text-accent flex items-center justify-center text-xs font-bold font-mono transition-transform duration-300 group-hover:scale-110 group-hover:border-accent/40 shadow-glow">
             AK
           </span>
-          <span className="hidden sm:inline-block text-sm font-bold tracking-tight text-[#eaf0eb]">
+          <span className="hidden sm:inline-block text-sm font-bold tracking-tight text-[#f8fafc]">
             {personalInfo.name}
           </span>
           <span className="relative flex h-2 w-2 ml-0.5">
@@ -94,7 +94,7 @@ export const Navbar: React.FC = () => {
                 className={`relative px-3 py-1.5 rounded-full transition-all duration-200 flex items-baseline gap-1.5 ${
                   isActive
                     ? 'text-accent font-semibold'
-                    : 'text-[#8d9e91] hover:text-[#eaf0eb]'
+                    : 'text-[#94a3b8] hover:text-[#f8fafc]'
                 }`}
               >
                 <span className="text-[10px] text-faint">{item.num}</span>
@@ -102,7 +102,7 @@ export const Navbar: React.FC = () => {
                 {isActive && (
                   <motion.div
                     layoutId="activeNavIndicator"
-                    className="absolute inset-0 bg-[#16201a] border border-accent/25 rounded-full -z-10 shadow-sm"
+                    className="absolute inset-0 bg-[#161c2e] border border-accent/25 rounded-full -z-10 shadow-sm"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -118,7 +118,7 @@ export const Navbar: React.FC = () => {
             href={personalInfo.medium}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full text-[#8d9e91] hover:text-[#eaf0eb] hover:bg-[#16201a] transition-all hover:scale-110"
+            className="p-2 rounded-full text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#161c2e] transition-all hover:scale-110"
             title="Read articles on Medium (@asmita.kafle67)"
             aria-label="Medium Profile"
           >
@@ -129,7 +129,7 @@ export const Navbar: React.FC = () => {
           <a
             href={personalInfo.cvPath}
             download="Asmita-Kafle-CV.pdf"
-            className="hidden sm:inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-hairline bg-[#16201a]/70 text-[#8d9e91] hover:text-[#eaf0eb] hover:border-accent/40 transition-all hover:scale-105"
+            className="hidden sm:inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-hairline bg-[#161c2e]/70 text-[#94a3b8] hover:text-[#f8fafc] hover:border-accent/40 transition-all hover:scale-105"
           >
             <FileDown className="w-3.5 h-3.5 text-accent" />
             <span>CV</span>
@@ -139,7 +139,7 @@ export const Navbar: React.FC = () => {
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, '#contact')}
-            className="hidden lg:inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-4 py-1.5 rounded-full bg-accent text-[#080c09] font-bold hover:bg-accent-light transition-all hover:scale-105 shadow-glow"
+            className="hidden lg:inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-4 py-1.5 rounded-full bg-accent text-[#06080e] font-bold hover:bg-accent-light transition-all hover:scale-105 shadow-glow"
           >
             <span>Let's talk</span>
             <ArrowUpRight className="w-3 h-3" />
@@ -148,7 +148,7 @@ export const Navbar: React.FC = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-1.5 rounded-full border border-hairline text-[#8d9e91] hover:text-[#eaf0eb] hover:bg-[#16201a]"
+            className="md:hidden p-1.5 rounded-full border border-hairline text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#161c2e]"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -164,7 +164,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden mt-2 rounded-3xl bg-[#0f1511]/95 backdrop-blur-xl border border-hairline p-5 shadow-2xl font-mono text-xs"
+            className="md:hidden mt-2 rounded-3xl bg-[#0e121e]/95 backdrop-blur-xl border border-hairline p-5 shadow-2xl font-mono text-xs"
           >
             <div className="flex flex-col space-y-2.5">
               {navItems.map((item) => (
@@ -172,7 +172,7 @@ export const Navbar: React.FC = () => {
                   key={item.id}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="flex items-center justify-between py-2 text-[#8d9e91] hover:text-[#eaf0eb] border-b border-hairline/40"
+                  className="flex items-center justify-between py-2 text-[#94a3b8] hover:text-[#f8fafc] border-b border-hairline/40"
                 >
                   <span className="flex items-center gap-2">
                     <span className="text-[10px] text-faint">{item.num}</span>
@@ -186,7 +186,7 @@ export const Navbar: React.FC = () => {
                   href={personalInfo.medium}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-[11px] text-[#8d9e91] hover:text-[#eaf0eb] py-2"
+                  className="flex items-center gap-1.5 text-[11px] text-[#94a3b8] hover:text-[#f8fafc] py-2"
                 >
                   <MediumIcon className="w-3.5 h-3.5 text-accent" />
                   <span>Medium</span>

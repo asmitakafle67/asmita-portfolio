@@ -15,7 +15,7 @@ import { personalInfo } from './data/portfolioData';
 export const App: React.FC = () => {
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-[#080c09] text-[#eaf0eb] relative overflow-hidden selection:bg-accent/25 selection:text-accent-light">
+      <div className="min-h-screen bg-[#06080e] text-[#f8fafc] relative overflow-hidden selection:bg-accent/25 selection:text-accent-light">
         <Helmet>
           <title>{personalInfo.name} — {personalInfo.title}</title>
           <meta
@@ -32,12 +32,12 @@ export const App: React.FC = () => {
           <link rel="canonical" href="https://asmitakafle.com" />
         </Helmet>
 
-        {/* Atmospheric Ambient Glowing Orbs (rosan.me signature) */}
+        {/* Atmospheric Ambient Glowing Orbs (Linear/Vercel sleek dark aesthetic) */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-          <div className="absolute -top-32 left-1/4 w-[600px] h-[600px] bg-accent/8 rounded-full blur-[140px] animate-ambient-1" />
-          <div className="absolute top-1/3 -right-32 w-[550px] h-[550px] bg-emerald-500/6 rounded-full blur-[150px] animate-ambient-2" />
-          <div className="absolute bottom-1/4 -left-32 w-[500px] h-[500px] bg-accent/7 rounded-full blur-[140px] animate-ambient-1" />
-          <div className="absolute -bottom-20 right-1/3 w-[650px] h-[650px] bg-emerald-400/5 rounded-full blur-[160px] animate-ambient-2" />
+          <div className="absolute -top-32 left-1/4 w-[600px] h-[600px] bg-sky-500/10 rounded-full blur-[140px] animate-ambient-1" />
+          <div className="absolute top-1/3 -right-32 w-[550px] h-[550px] bg-indigo-500/8 rounded-full blur-[150px] animate-ambient-2" />
+          <div className="absolute bottom-1/4 -left-32 w-[500px] h-[500px] bg-blue-600/8 rounded-full blur-[140px] animate-ambient-1" />
+          <div className="absolute -bottom-20 right-1/3 w-[650px] h-[650px] bg-cyan-500/6 rounded-full blur-[160px] animate-ambient-2" />
         </div>
 
         {/* Global Floating Cosmic Navigation */}

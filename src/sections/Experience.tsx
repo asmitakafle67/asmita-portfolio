@@ -28,8 +28,8 @@ export const ExperienceSection: React.FC = () => {
               <div
                 className={`absolute -left-[31px] sm:-left-[39px] top-2 w-4 h-4 rounded-full border-2 transition-transform duration-300 group-hover:scale-125 ${
                   exp.isCurrent
-                    ? 'bg-accent border-[#080c09] shadow-[0_0_12px_#76d39c]'
-                    : 'bg-[#080c09] border-[#1d2820] group-hover:border-accent'
+                    ? 'bg-accent border-[#06080e] shadow-[0_0_12px_#38bdf8]'
+                    : 'bg-[#06080e] border-[#1e2638] group-hover:border-accent'
                 }`}
               >
                 {exp.isCurrent && (

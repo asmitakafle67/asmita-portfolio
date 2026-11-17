@@ -2,20 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* rosan.me signature cosmic dark aesthetic */
+/* Premium obsidian / sleek modern dark aesthetic (Linear / Vercel style) */
 :root {
   color-scheme: dark;
-  --color-paper: #080c09;
-  --color-surface: #0f1511;
-  --color-surface-2: #16201a;
-  --color-ink: #eaf0eb;
-  --color-graphite: #8d9e91;
-  --color-hairline: #1d2820;
-  --color-faint: #5a6e60;
-  --color-accent: #76d39c;
-  --color-accent-light: #9fe7be;
-  --color-accent-soft: rgba(118, 211, 156, 0.1);
-  --color-accent-glow: rgba(118, 211, 156, 0.28);
+  --color-paper: #06080e;
+  --color-surface: #0e121e;
+  --color-surface-2: #161c2e;
+  --color-ink: #f8fafc;
+  --color-graphite: #94a3b8;
+  --color-hairline: #1e2638;
+  --color-faint: #64748b;
+  --color-accent: #38bdf8;
+  --color-accent-light: #7dd3fc;
+  --color-accent-soft: rgba(56, 189, 248, 0.1);
+  --color-accent-glow: rgba(56, 189, 248, 0.32);
 }
 
 @layer base {
@@ -35,23 +35,23 @@
   }
 
   ::selection {
-    background-color: rgba(118, 211, 156, 0.25);
-    color: #9fe7be;
+    background-color: rgba(56, 189, 248, 0.25);
+    color: #7dd3fc;
   }
 }
 
-/* Floating Cosmic Nav as seen on rosan.me */
+/* Floating Sleek Dark Nav */
 .cosmic-nav {
-  background: rgba(15, 21, 17, 0.85);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(14, 18, 30, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--color-hairline);
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(118, 211, 156, 0.08) inset;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(56, 189, 248, 0.08) inset;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cosmic-nav:hover {
-  border-color: rgba(118, 211, 156, 0.25);
+  border-color: rgba(56, 189, 248, 0.3);
 }
 
 /* Chip & Pill Design System */
@@ -64,7 +64,7 @@
   padding: 0.35rem 0.75rem;
   display: inline-flex;
   transition: all 0.2s ease;
-  background: rgba(15, 21, 17, 0.6);
+  background: rgba(14, 18, 30, 0.65);
   color: var(--color-graphite);
 }
 
@@ -95,7 +95,7 @@
 
 .pill-accent {
   background: var(--color-accent);
-  color: #080c09;
+  color: #06080e;
   border: 1px solid transparent;
   border-radius: 9999px;
   align-items: center;
@@ -115,12 +115,12 @@
 
 /* Glass panel */
 .glass-panel {
-  background: rgba(15, 21, 17, 0.8);
+  background: rgba(14, 18, 30, 0.8);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 
-/* Cosmic background glow effects */
+/* Ambient glow drift effects */
 @keyframes ambientDrift {
   0%, 100% {
     transform: translate(0, 0) scale(1);
@@ -156,7 +156,7 @@
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(118, 211, 156, 0.4), transparent 60%);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), transparent 60%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -169,20 +169,20 @@
   opacity: 1;
 }
 
-/* Custom dark scrollbar */
+/* Custom sleek dark scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #080c09;
+  background: #06080e;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1c271e;
+  background: #1c2438;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a3c2e;
+  background: #2a3754;
 }

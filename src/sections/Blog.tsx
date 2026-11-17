@@ -73,8 +73,8 @@ export const BlogSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Blog Post Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        {/* Blog Post Rows */}
+        <div className="space-y-6 sm:space-y-8">
           {filteredPosts.map((post) => (
             <BlogCard key={post.id} post={post} onRead={handleOpenPost} />
           ))}
