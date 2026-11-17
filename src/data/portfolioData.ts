@@ -6,8 +6,8 @@ export const personalInfo = {
   experienceYears: '4 years',
   location: 'Kathmandu, Nepal',
   email: 'asmita.kafle67@gmail.com',
-  github: 'https://github.com/asmitakafle67', // Placeholder: easily update with actual URL
-  linkedin: 'https://linkedin.com/in/placeholder-asmita', // Placeholder: easily update with actual URL
+  github: 'https://github.com/asmitakafle67',
+  linkedin: 'https://www.linkedin.com/in/asmita-kafle/',
   medium: 'https://medium.com/@asmita.kafle67',
   cvPath: '/Asmita-Kafle-CV.pdf',
   tagline: 'Engineering scalable, intuitive, and high-performance frontend interfaces with React, Next.js, and TypeScript.',
