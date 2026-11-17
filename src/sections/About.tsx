@@ -5,7 +5,7 @@ import { SectionHeading } from '../components/SectionHeading';
 export const About: React.FC = () => {
   return (
     <section id="about" className="py-14 sm:py-20 border-t border-hairline bg-surface/30">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           category="00 / OVERVIEW"
           title="Focused Frontend Engineering"
@@ -20,7 +20,7 @@ export const About: React.FC = () => {
           className="rounded-3xl bg-surface border border-hairline p-6 sm:p-8 space-y-4 shadow-subtle"
         >
           <p className="text-base sm:text-lg text-ink font-medium leading-relaxed">
-            Software Developer based in Kathmandu, Nepal, with <span className="text-accent font-semibold">4 years of specialized experience</span> in client-side engineering, enterprise dashboards, and modern component systems.
+            Software Developer based in Kathmandu, Nepal, with <span className="text-accent font-semibold">4 years of experience</span> in client-side engineering, enterprise dashboards, and modern component systems.
           </p>
 
           <p className="text-sm sm:text-base text-graphite leading-relaxed">

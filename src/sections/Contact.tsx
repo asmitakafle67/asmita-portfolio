@@ -41,16 +41,16 @@ export const ContactSection: React.FC = () => {
           subtitle="Open to frontend engineering roles, component architecture consulting, and high-impact digital initiatives."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-stretch">
           {/* Contact Details Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-5 space-y-6"
+            className="lg:col-span-5 h-full flex flex-col"
           >
-            <div className="rounded-3xl bg-surface border border-hairline shadow-subtle p-6 sm:p-8 space-y-6">
+            <div className="rounded-3xl bg-surface border border-hairline shadow-subtle p-6 sm:p-8 space-y-6 h-full flex flex-col justify-between">
               <div>
                 <h3 className="font-display text-xl font-bold text-ink tracking-tight">
                   Direct Inquiries
@@ -163,89 +163,95 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="lg:col-span-7"
+            className="lg:col-span-7 h-full flex flex-col"
           >
-            <div className="rounded-3xl bg-surface border border-hairline shadow-subtle p-6 sm:p-8">
-              <h3 className="font-display text-xl font-bold text-ink tracking-tight mb-1">
-                Send a Direct Message
-              </h3>
-              <p className="text-xs sm:text-sm text-graphite mb-6">
-                Fill out the form below to immediately compose and send a message.
-              </p>
+            <div className="rounded-3xl bg-surface border border-hairline shadow-subtle p-6 sm:p-8 h-full flex flex-col justify-between space-y-6">
+              <div>
+                <h3 className="font-display text-xl font-bold text-ink tracking-tight mb-1">
+                  Send a Direct Message
+                </h3>
+                <p className="text-xs sm:text-sm text-graphite mb-6">
+                  Fill out the form below to immediately compose and send a message.
+                </p>
 
-              {formSubmitted && (
-                <div className="mb-6 p-4 rounded-2xl bg-accent/10 border border-accent/25 text-xs font-mono text-accent flex items-center gap-2">
-                  <Check className="w-4 h-4 shrink-0" />
-                  <span>Email client opened! If your client didn't launch automatically, please email <strong>{personalInfo.email}</strong>.</span>
-                </div>
-              )}
+                {formSubmitted && (
+                  <div className="mb-6 p-4 rounded-2xl bg-accent/10 border border-accent/25 text-xs font-mono text-accent flex items-center gap-2">
+                    <Check className="w-4 h-4 shrink-0" />
+                    <span>Email client opened! If your client didn't launch automatically, please email <strong>{personalInfo.email}</strong>.</span>
+                  </div>
+                )}
+              </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-4 flex-1 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-mono uppercase tracking-wider text-graphite mb-1.5">
+                        Your Name
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g. John Doe"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-hairline text-sm text-ink placeholder:text-faint focus:outline-none focus:border-accent transition-all bg-paper"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-mono uppercase tracking-wider text-graphite mb-1.5">
+                        Your Email
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="e.g. john@example.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-hairline text-sm text-ink placeholder:text-faint focus:outline-none focus:border-accent transition-all bg-paper"
+                      />
+                    </div>
+                  </div>
+
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-wider text-graphite mb-1.5">
-                      Your Name
+                      Subject / Topic
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. John Doe"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="e.g. Frontend Engineering Role / Dashboard Collaboration"
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded-xl border border-hairline text-sm text-ink placeholder:text-faint focus:outline-none focus:border-accent transition-all bg-paper"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-wider text-graphite mb-1.5">
-                      Your Email
+                      Message
                     </label>
-                    <input
-                      type="email"
+                    <textarea
                       required
-                      placeholder="e.g. john@example.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-hairline text-sm text-ink placeholder:text-faint focus:outline-none focus:border-accent transition-all bg-paper"
+                      rows={5}
+                      placeholder="Tell me about your team, platform, or project..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-hairline text-sm text-ink placeholder:text-faint focus:outline-none focus:border-accent transition-all bg-paper resize-y"
                     />
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-graphite mb-1.5">
-                    Subject / Topic
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g. Frontend Engineering Role / Dashboard Collaboration"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-hairline text-sm text-ink placeholder:text-faint focus:outline-none focus:border-accent transition-all bg-paper"
-                  />
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className="pill font-mono text-[11px] uppercase tracking-[0.12em] hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    <Send className="w-3.5 h-3.5 text-accent" />
+                    <span>Send Message via Email</span>
+                  </button>
                 </div>
-
-                <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-graphite mb-1.5">
-                    Message
-                  </label>
-                  <textarea
-                    required
-                    rows={4}
-                    placeholder="Tell me about your team, platform, or project..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-hairline text-sm text-ink placeholder:text-faint focus:outline-none focus:border-accent transition-all bg-paper resize-y"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="pill font-mono text-[11px] uppercase tracking-[0.12em] hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  <Send className="w-3.5 h-3.5 text-accent" />
-                  <span>Send Message via Email</span>
-                </button>
               </form>
             </div>
           </motion.div>

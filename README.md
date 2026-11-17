@@ -5,7 +5,7 @@ An editorial, high-performance personal portfolio website built with **React 18*
 ### Highlights:
 - **Floating Cosmic Nav (inspired by [rosan.me](https://rosan.me))**: Fixed floating pill navigation with numbered sections and smooth active states.
 - **Real Front Page Captures**: Live browser preview captures for all 6 featured enterprise platforms.
-- **Frontend-Specialized**: 100% focused on modern frontend engineering, component architecture, and responsive UX.
+- **Frontend**: 100% focused on modern frontend engineering, component architecture, and responsive UX.
 - **Writing & Medium**: Technical blog area integrated with Asmita's Medium publication ([@asmita.kafle67](https://medium.com/@asmita.kafle67)).
 
 ---

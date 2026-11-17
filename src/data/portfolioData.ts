@@ -6,12 +6,12 @@ export const personalInfo = {
   experienceYears: '4 years',
   location: 'Kathmandu, Nepal',
   email: 'asmita.kafle67@gmail.com',
-  github: 'https://github.com/placeholder-asmita', // Placeholder: easily update with actual URL
+  github: 'https://github.com/asmitakafle67', // Placeholder: easily update with actual URL
   linkedin: 'https://linkedin.com/in/placeholder-asmita', // Placeholder: easily update with actual URL
   medium: 'https://medium.com/@asmita.kafle67',
   cvPath: '/Asmita-Kafle-CV.pdf',
   tagline: 'Engineering scalable, intuitive, and high-performance frontend interfaces with React, Next.js, and TypeScript.',
-  about: `I am a Software Developer with 4 years of specialized experience architecting and delivering production web applications, enterprise dashboards, and AI-powered interfaces.
+  about: `I am a Software Developer with 4 years of experience architecting and delivering production web applications, enterprise dashboards, and AI-powered interfaces.
 
 My primary passion and deepest expertise are focused entirely on the modern frontend ecosystem — React, Next.js, TypeScript, JavaScript (ES6+), and resilient state architectures. I specialize in building complex, data-intensive user interfaces such as manufacturing schedulers, live WebSocket feeds, dynamic Kanban boards, and high-density data visualizations.
 

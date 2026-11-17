@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
       <div className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-accent/8 rounded-full blur-[110px] pointer-events-none" />
 
       {/* Subtle architectural dark grid */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.035] pointer-events-none"
         style={{
           backgroundImage: `linear-gradient(#38bdf8 1px, transparent 1px), linear-gradient(to right, #38bdf8 1px, transparent 1px)`,
@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
               </span>
-              <span>Specialized Frontend Developer</span>
+              <span>Frontend Developer</span>
               <span className="text-faint">•</span>
               <span className="flex items-center gap-1 text-[#f8fafc]">
                 <MapPin className="w-3 h-3 text-accent" />
@@ -93,10 +93,10 @@ export const Hero: React.FC = () => {
                 <span className="font-bold text-sm text-[#f8fafc] bg-[#0e121e] border border-[#1e2638] px-2.5 py-0.5 rounded-md shadow-sm">6+</span>
                 <span>Production Platforms</span>
               </div>
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <span className="text-accent">✓</span>
-                <span className="text-[#f8fafc]">100% Frontend Focus</span>
-              </div>
+                <span className="text-[#f8fafc]">100% Focus</span>
+              </div> */}
             </motion.div>
 
             {/* Action Buttons */}
