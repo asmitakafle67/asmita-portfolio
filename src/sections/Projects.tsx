@@ -39,11 +39,10 @@ export const ProjectsSection: React.FC = () => {
                 <button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
-                  className={`relative px-4 py-1.5 rounded-full font-mono text-xs whitespace-nowrap shrink-0 transition-all duration-200 ${
-                    isSelected
+                  className={`relative px-4 py-1.5 rounded-full font-mono text-xs whitespace-nowrap shrink-0 transition-all duration-200 ${isSelected
                       ? 'text-[#06080e] font-bold'
                       : 'text-[#94a3b8] hover:text-[#f8fafc]'
-                  }`}
+                    }`}
                 >
                   {isSelected && (
                     <motion.div
@@ -72,7 +71,7 @@ export const ProjectsSection: React.FC = () => {
         </motion.div>
 
         {/* Transparency note */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -83,7 +82,7 @@ export const ProjectsSection: React.FC = () => {
             <strong className="text-[#f8fafc] font-semibold uppercase tracking-wider">[Integrity Note]:</strong> Work depicted highlights contributions as Frontend Developer within cross-functional teams at Qsystems AI and Genese Solution.
           </p>
           <span className="text-faint shrink-0">Updated 2026</span>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

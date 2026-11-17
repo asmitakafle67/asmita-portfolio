@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, FileDown, ArrowUpRight } from 'lucide-react';
+import { Menu, X, FileDown, ArrowUpRight, ChevronDown } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import { MediumIcon } from './Icons';
 
@@ -23,6 +23,7 @@ const navItems: NavItem[] = [
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('projects');
+  const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,160 +51,207 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <motion.div
-      initial={{ y: -30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 z-50 w-[min(980px,94vw)]"
-    >
-      {/* Floating Cosmic Nav inspired by rosan.me */}
-      <nav
-        className="cosmic-nav rounded-full px-4 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between"
-        aria-label="Main Navigation"
-      >
-        {/* Brand / Logo */}
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
-          className="group flex items-center gap-2.5 text-[#f8fafc] font-semibold tracking-tight shrink-0"
+    <>
+      {/* If dismissed by user, show a sleek minimal restore trigger */}
+      {isDismissed && (
+        <motion.button
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          onClick={() => setIsDismissed(false)}
+          className="fixed top-3 left-1/2 -translate-x-1/2 z-50 px-4 py-1.5 rounded-full bg-[#0e121e]/90 backdrop-blur-md border border-[#1e2638] text-xs font-mono text-[#94a3b8] hover:text-[#f8fafc] hover:border-accent/40 shadow-glow flex items-center gap-2"
+          aria-label="Reopen Navigation"
         >
-          <span className="w-8 h-8 rounded-full bg-[#161c2e] border border-[#1e2638] text-accent flex items-center justify-center text-xs font-bold font-mono transition-transform duration-300 group-hover:scale-110 group-hover:border-accent/40 shadow-glow">
-            AK
-          </span>
-          <span className="hidden sm:inline-block text-sm font-bold tracking-tight text-[#f8fafc]">
-            {personalInfo.name}
-          </span>
-          <span className="relative flex h-2 w-2 ml-0.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
-          </span>
-        </a>
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span>Navigation</span>
+          <ChevronDown className="w-3.5 h-3.5 text-accent" />
+        </motion.button>
+      )}
 
-        {/* Center: Nav Items with Numbers as seen on rosan.me */}
-        <div className="hidden md:flex items-center gap-1 lg:gap-2 font-mono text-xs">
-          {navItems.map((item) => {
-            const isActive = activeSection === item.id;
-            return (
-              <a
-                key={item.id}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className={`relative px-3 py-1.5 rounded-full transition-all duration-200 flex items-baseline gap-1.5 ${
-                  isActive
-                    ? 'text-accent font-semibold'
-                    : 'text-[#94a3b8] hover:text-[#f8fafc]'
-                }`}
-              >
-                <span className="text-[10px] text-faint">{item.num}</span>
-                <span>{item.name}</span>
-                {isActive && (
-                  <motion.div
-                    layoutId="activeNavIndicator"
-                    className="absolute inset-0 bg-[#161c2e] border border-accent/25 rounded-full -z-10 shadow-sm"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </a>
-            );
-          })}
-        </div>
-
-        {/* Right Actions: Medium, CV, Let's talk */}
-        <div className="flex items-center gap-2 sm:gap-2.5">
-          {/* Medium Link */}
-          <a
-            href={personalInfo.medium}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-full text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#161c2e] transition-all hover:scale-110"
-            title="Read articles on Medium (@asmita.kafle67)"
-            aria-label="Medium Profile"
-          >
-            <MediumIcon className="w-4 h-4 text-accent" />
-          </a>
-
-          {/* Download CV */}
-          <a
-            href={personalInfo.cvPath}
-            download="Asmita-Kafle-CV.pdf"
-            className="hidden sm:inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-hairline bg-[#161c2e]/70 text-[#94a3b8] hover:text-[#f8fafc] hover:border-accent/40 transition-all hover:scale-105"
-          >
-            <FileDown className="w-3.5 h-3.5 text-accent" />
-            <span>CV</span>
-          </a>
-
-          {/* Let's Talk CTA */}
-          <a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, '#contact')}
-            className="hidden lg:inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-4 py-1.5 rounded-full bg-accent text-[#06080e] font-bold hover:bg-accent-light transition-all hover:scale-105 shadow-glow"
-          >
-            <span>Let's talk</span>
-            <ArrowUpRight className="w-3 h-3" />
-          </a>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-1.5 rounded-full border border-hairline text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#161c2e]"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Drawer Dropdown */}
+      {/* Main Floating Cosmic Nav */}
       <AnimatePresence>
-        {mobileMenuOpen && (
+        {!isDismissed && (
           <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden mt-2 rounded-3xl bg-[#0e121e]/95 backdrop-blur-xl border border-hairline p-5 shadow-2xl font-mono text-xs"
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -30, opacity: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 z-50 w-[min(1040px,85vw)]"
           >
-            <div className="flex flex-col space-y-2.5">
-              {navItems.map((item) => (
+            <nav
+              className="cosmic-nav rounded-full px-3.5 sm:px-5 py-2 sm:py-2.5 flex items-center justify-between shadow-2xl"
+              aria-label="Main Navigation"
+            >
+              {/* TOP LEFT CORNER: Brand + Available for new projects badge */}
+              <div className="flex items-center gap-2 sm:gap-3 shrink-0">
                 <a
-                  key={item.id}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className="flex items-center justify-between py-2 text-[#94a3b8] hover:text-[#f8fafc] border-b border-hairline/40"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="group flex items-center gap-2 text-[#f8fafc] font-semibold tracking-tight"
                 >
-                  <span className="flex items-center gap-2">
-                    <span className="text-[10px] text-faint">{item.num}</span>
-                    <span>{item.name}</span>
+                  <span className="w-8 h-8 rounded-full bg-[#161c2e] border border-[#1e2638] text-accent flex items-center justify-center text-xs font-bold font-mono transition-transform duration-300 group-hover:scale-110 group-hover:border-accent/40 shadow-glow">
+                    AK
                   </span>
-                  <span className="text-accent text-[10px]">↗</span>
+                  <span className="hidden sm:inline-block text-sm font-bold tracking-tight text-[#f8fafc]">
+                    {personalInfo.name}
+                  </span>
                 </a>
-              ))}
-              <div className="pt-2 flex items-center justify-between gap-3">
+
+                {/* Available for new projects on Top Left Corner */}
+
+              </div>
+
+              {/* Center: Nav Items with Numbers as seen on rosan.me */}
+              <div className="hidden lg:flex items-center gap-1 xl:gap-1.5 font-mono text-xs">
+                {navItems.map((item) => {
+                  const isActive = activeSection === item.id;
+                  return (
+                    <a
+                      key={item.id}
+                      href={item.href}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                      className={`relative px-3 py-1.5 rounded-full transition-all duration-200 flex items-baseline gap-1.5 ${isActive
+                        ? 'text-accent font-semibold'
+                        : 'text-[#94a3b8] hover:text-[#f8fafc]'
+                        }`}
+                    >
+                      <span className="text-[10px] text-faint">{item.num}</span>
+                      <span>{item.name}</span>
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeNavIndicator"
+                          className="absolute inset-0 bg-[#161c2e] border border-accent/25 rounded-full -z-10 shadow-sm"
+                          transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                    </a>
+                  );
+                })}
+              </div>
+
+              {/* Right Actions: Medium, CV, Let's talk + Closing Bar (X) */}
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                {/* Medium Link */}
                 <a
                   href={personalInfo.medium}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-[11px] text-[#94a3b8] hover:text-[#f8fafc] py-2"
+                  className="p-2 rounded-full text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#161c2e] transition-all hover:scale-110"
+                  title="Read articles on Medium (@asmita.kafle67)"
+                  aria-label="Medium Profile"
                 >
-                  <MediumIcon className="w-3.5 h-3.5 text-accent" />
-                  <span>Medium</span>
+                  <MediumIcon className="w-4 h-4 text-accent" />
                 </a>
+
+                {/* Download CV */}
                 <a
                   href={personalInfo.cvPath}
                   download="Asmita-Kafle-CV.pdf"
-                  className="flex items-center gap-1.5 text-[11px] text-accent py-2 font-semibold"
+                  className="hidden sm:inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-hairline bg-[#161c2e]/70 text-[#94a3b8] hover:text-[#f8fafc] hover:border-accent/40 transition-all hover:scale-105"
                 >
-                  <FileDown className="w-3.5 h-3.5" />
-                  <span>Download CV</span>
+                  <FileDown className="w-3.5 h-3.5 text-accent" />
+                  <span>CV</span>
                 </a>
+
+                {/* Let's Talk CTA */}
+                <a
+                  href="#contact"
+                  onClick={(e) => handleNavClick(e, '#contact')}
+                  className="hidden md:inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-accent text-[#06080e] font-bold hover:bg-accent-light transition-all hover:scale-105 shadow-glow"
+                >
+                  <span>Let's talk</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
+
+                {/* Closing Bar: Desktop Close (X) */}
+                <button
+                  onClick={() => setIsDismissed(true)}
+                  className="hidden sm:flex p-1.5 rounded-full border border-hairline text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#161c2e] hover:border-accent/40 transition-all"
+                  title="Close navigation bar"
+                  aria-label="Close navigation bar"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+
+                {/* Mobile Menu Toggle */}
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="lg:hidden p-1.5 rounded-full border border-hairline text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#161c2e]"
+                  aria-label="Toggle menu"
+                >
+                  {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+                </button>
               </div>
-            </div>
+            </nav>
+
+            {/* Mobile Drawer Dropdown with dedicated closing bar header */}
+            <AnimatePresence>
+              {mobileMenuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -10, scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
+                  className="lg:hidden mt-2 rounded-3xl bg-[#0e121e]/98 backdrop-blur-2xl border border-hairline p-5 shadow-2xl font-mono text-xs"
+                >
+                  {/* Closing bar header */}
+                  <div className="flex items-center justify-between pb-3 border-b border-hairline/60">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="text-[11px] text-emerald-400 font-semibold">Available for new projects</span>
+                    </div>
+                    <button
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="p-1 rounded-full border border-hairline text-[#94a3b8] hover:text-[#f8fafc] hover:bg-[#161c2e]"
+                      aria-label="Close menu"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+
+                  <div className="flex flex-col space-y-2 pt-3">
+                    {navItems.map((item) => (
+                      <a
+                        key={item.id}
+                        href={item.href}
+                        onClick={(e) => handleNavClick(e, item.href)}
+                        className="flex items-center justify-between py-2 text-[#94a3b8] hover:text-[#f8fafc] border-b border-hairline/40"
+                      >
+                        <span className="flex items-center gap-2">
+                          <span className="text-[10px] text-faint">{item.num}</span>
+                          <span>{item.name}</span>
+                        </span>
+                        <span className="text-accent text-[10px]">↗</span>
+                      </a>
+                    ))}
+                    <div className="pt-2 flex items-center justify-between gap-3">
+                      <a
+                        href={personalInfo.medium}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 text-[11px] text-[#94a3b8] hover:text-[#f8fafc] py-2"
+                      >
+                        <MediumIcon className="w-3.5 h-3.5 text-accent" />
+                        <span>Medium</span>
+                      </a>
+                      <a
+                        href={personalInfo.cvPath}
+                        download="Asmita-Kafle-CV.pdf"
+                        className="flex items-center gap-1.5 text-[11px] text-accent py-2 font-semibold"
+                      >
+                        <FileDown className="w-3.5 h-3.5" />
+                        <span>Download CV</span>
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </>
   );
 };

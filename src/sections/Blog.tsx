@@ -61,11 +61,10 @@ export const BlogSection: React.FC = () => {
               <button
                 key={topic}
                 onClick={() => setSelectedTopic(topic)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all ${
-                  selectedTopic === topic
-                    ? 'bg-accent/15 text-accent border border-accent/40 font-semibold shadow-glow'
-                    : 'text-graphite hover:text-ink hover:bg-paper/60 border border-transparent'
-                }`}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all ${selectedTopic === topic
+                  ? 'bg-accent/15 text-accent border border-accent/40 font-semibold shadow-glow'
+                  : 'text-graphite hover:text-ink hover:bg-paper/60 border border-transparent'
+                  }`}
               >
                 {topic}
               </button>
@@ -84,9 +83,8 @@ export const BlogSection: React.FC = () => {
         <div className="mt-10 p-6 rounded-3xl bg-surface border border-hairline shadow-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-graphite">
           <div className="space-y-1">
             <span className="font-semibold text-ink block sm:inline">
-              Active Writing & Thought Leadership:
+              Others:
             </span>{' '}
-            Deep dives on React 19 compiler internals, Zustand real-time synchronization, and WebSocket architectures.
           </div>
           <a
             href="https://medium.com/@asmita.kafle67"

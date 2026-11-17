@@ -20,11 +20,11 @@ export const About: React.FC = () => {
           className="rounded-3xl bg-surface border border-hairline p-6 sm:p-8 space-y-4 shadow-subtle"
         >
           <p className="text-base sm:text-lg text-ink font-medium leading-relaxed">
-            Software Developer based in Kathmandu, Nepal, with <span className="text-accent font-semibold">4 years of experience</span> in client-side engineering, enterprise dashboards, and modern component systems.
+            Frontend Developer based in Kathmandu, Nepal, with <span className="text-accent font-semibold">4 years of software development experience</span> building scalable, responsive, and data-intensive enterprise web applications using React, Next.js, TypeScript, and JavaScript.
           </p>
 
           <p className="text-sm sm:text-base text-graphite leading-relaxed">
-            Core expertise centers on <strong className="text-ink font-semibold">React, Next.js, and TypeScript</strong> — shipping mission-critical interfaces from real-time manufacturing schedulers with WebSockets at <span className="text-ink font-semibold">Qsystems AI</span> to generative AI fintech dashboards and desktop applications at <span className="text-ink font-semibold">Genese Solution</span>.
+            Specialized in frontend architecture, reusable component design, state management (Zustand, Redux Toolkit, React Query), and data visualization — delivering production-grade platforms from real-time WebSocket manufacturing schedulers at <span className="text-ink font-semibold">Qsystems AI</span> to generative AI fintech platforms showcased at AWS re:Invent 2023 at <span className="text-ink font-semibold">Genese Solution</span>.
           </p>
 
           <div className="pt-4 border-t border-hairline flex flex-wrap items-center gap-2 text-xs font-mono">

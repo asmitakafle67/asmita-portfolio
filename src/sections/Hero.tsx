@@ -39,23 +39,28 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 space-y-6"
           >
-            {/* Status Pill */}
+            {/* Available for new projects Status Pill on top left */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0e121e] border border-[#1e2638] shadow-sm font-mono text-xs text-[#94a3b8]"
+              className="flex flex-wrap items-center gap-2.5"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
-              </span>
-              <span>Frontend Developer</span>
-              <span className="text-faint">•</span>
-              <span className="flex items-center gap-1 text-[#f8fafc]">
-                <MapPin className="w-3 h-3 text-accent" />
-                {personalInfo.location}
-              </span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 font-mono text-xs text-emerald-400 shadow-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                </span>
+                <span className="font-semibold">Available for new projects</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0e121e] border border-[#1e2638] shadow-sm font-mono text-xs text-[#94a3b8]">
+                <span>Frontend Developer</span>
+                <span className="text-faint">•</span>
+                <span className="flex items-center gap-1 text-[#f8fafc]">
+                  <MapPin className="w-3 h-3 text-accent" />
+                  {personalInfo.location}
+                </span>
+              </div>
             </motion.div>
 
             {/* Headline */}
