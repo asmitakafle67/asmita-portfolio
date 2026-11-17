@@ -11,7 +11,7 @@ export const ExperienceSection: React.FC = () => {
         <SectionHeading
           category="02 / CAREER PATH"
           title="Professional Experience"
-          subtitle="4 years of engineering software across fast-paced AI platforms, fintech platforms, and enterprise solutions."
+          subtitle="4+ years of engineering software across fast-paced AI platforms, fintech platforms, and enterprise solutions."
         />
 
         <div className="relative border-l border-hairline ml-3 sm:ml-4 pl-6 sm:pl-8 space-y-12">
@@ -26,11 +26,10 @@ export const ExperienceSection: React.FC = () => {
             >
               {/* Timeline indicator node */}
               <div
-                className={`absolute -left-[31px] sm:-left-[39px] top-2 w-4 h-4 rounded-full border-2 transition-transform duration-300 group-hover:scale-125 ${
-                  exp.isCurrent
+                className={`absolute -left-[31px] sm:-left-[39px] top-2 w-4 h-4 rounded-full border-2 transition-transform duration-300 group-hover:scale-125 ${exp.isCurrent
                     ? 'bg-accent border-[#06080e] shadow-[0_0_12px_#38bdf8]'
                     : 'bg-[#06080e] border-[#1e2638] group-hover:border-accent'
-                }`}
+                  }`}
               >
                 {exp.isCurrent && (
                   <span className="absolute -inset-1 rounded-full bg-accent/40 animate-ping opacity-75" />

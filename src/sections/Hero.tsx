@@ -79,7 +79,7 @@ export const Hero: React.FC = () => {
                 </span>
               </h1>
               <p className="text-base sm:text-lg text-[#94a3b8] max-w-2xl leading-relaxed pt-2">
-                4 years engineering high-performance web applications, enterprise dashboards, and AI-driven platforms with <strong className="text-[#f8fafc] font-semibold">React, Next.js, TypeScript, and modern UI architectures</strong>.
+                4+ years engineering high-performance web applications, enterprise dashboards, and AI-driven platforms with <strong className="text-[#f8fafc] font-semibold">React, Next.js, TypeScript, and modern UI architectures</strong>.
               </p>
             </motion.div>
 
@@ -234,7 +234,7 @@ export const Hero: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-faint">experience:</span>{' '}
-                    <span className="text-accent">"4 years"</span>,
+                    <span className="text-accent">"4+ Years"</span>,
                   </div>
                   <div>
                     <span className="text-faint">coreStack:</span> [

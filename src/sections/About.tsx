@@ -20,7 +20,7 @@ export const About: React.FC = () => {
           className="rounded-3xl bg-surface border border-hairline p-6 sm:p-8 space-y-4 shadow-subtle"
         >
           <p className="text-base sm:text-lg text-ink font-medium leading-relaxed">
-            Frontend Developer based in Kathmandu, Nepal, with <span className="text-accent font-semibold">4 years of software development experience</span> building scalable, responsive, and data-intensive enterprise web applications using React, Next.js, TypeScript, and JavaScript.
+            Frontend Developer based in Kathmandu, Nepal, with <span className="text-accent font-semibold">4+ Years of software development experience</span> building scalable, responsive, and data-intensive enterprise web applications using React, Next.js, TypeScript, and JavaScript.
           </p>
 
           <p className="text-sm sm:text-base text-graphite leading-relaxed">

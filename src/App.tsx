@@ -20,7 +20,7 @@ export const App: React.FC = () => {
           <title>{personalInfo.name} — {personalInfo.title}</title>
           <meta
             name="description"
-            content={`Portfolio of ${personalInfo.name}, a Frontend Developer with 4 years of experience specializing in React, Next.js, TypeScript, and modern enterprise web platforms.`}
+            content={`Portfolio of ${personalInfo.name}, a Frontend Developer with 4+ Years of experience specializing in React, Next.js, TypeScript, and modern enterprise web platforms.`}
           />
           <meta
             name="keywords"
